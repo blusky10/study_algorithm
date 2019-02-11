@@ -21,7 +21,6 @@ public class BraceChecker {
         map.put('}', '{');
         map.put(']', '[');
 
-        System.out.println(braces);
         Stack<Character> stack = new Stack<>();
         for (int i=0;i<braces.length(); i++){
             char c = braces.charAt(i);

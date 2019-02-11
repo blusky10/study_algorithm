@@ -1,6 +1,5 @@
 package codewars;
 
-import codewars.BraceChecker;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
