@@ -2,10 +2,6 @@ package codewars;
 
 import java.util.*;
 
-/**
- * Created by Sanghyun KIM on 2019-02-08.
- */
-
 // Valid Braces
 //"(){}[]"   =>  True
 //        "([{}])"   =>  True

@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- * Created by Sanghyun KIM on 2019-02-11.
- */
 // Level 1 완주하지 못한 선수
 public class Hash0001 {
     public static void main(String[] args) {
