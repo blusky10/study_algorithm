@@ -1,8 +1,12 @@
 # study_algorithm
 
-# Codewars
+## Codewars
 * BraceChecker
 * FindOutlier
 
-# Programers
+## Programers
 * Hash Level1 완주하지 못한 선수
+
+## References
+* Eratos
+* Subset
