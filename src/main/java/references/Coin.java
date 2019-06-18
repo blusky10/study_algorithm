@@ -6,6 +6,7 @@ public class Coin {
     static int N=10;
     static int[] ready = new int[N+1];
     static int[] value = new int[N+1];
+    static int[] first = new int[N+1];
     static int[] data = {1, 3, 4};
 
     public static void main(String[] args) {
