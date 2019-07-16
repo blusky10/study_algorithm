@@ -19,11 +19,6 @@ public class AddTowNumbersTest {
         ll1.next = ll2;
         ll2.next = ll3;
 
-//        ListNode l4 = new ListNode(5);
-//        ListNode l5 = new ListNode(6);
-//        ListNode l6 = new ListNode(4);
-//        l4.next = l5;
-//        l5.next = l6;
 
         ListNode l1 = new ListNode(9);
         ListNode l2 = new ListNode(9);
@@ -51,46 +46,23 @@ public class AddTowNumbersTest {
 
     }
     @Test
-    public void makeIntMethodTest(){
+    public void makeNumberToListNodeTest(){
+        ListNode listNode = addTwoNumbers.makeNumberToListNode(807);
 
-        ListNode l1 = new ListNode(9);
-        ListNode l2 = new ListNode(9);
-        ListNode l3 = new ListNode(9);
-        ListNode l4 = new ListNode(9);
-        ListNode l5 = new ListNode(9);
-        ListNode l6 = new ListNode(9);
-        ListNode l7 = new ListNode(9);
-        ListNode l8 = new ListNode(9);
-        ListNode l9 = new ListNode(9);
-        ListNode l10 = new ListNode(1);
-        l1.next = l2;
-        l2.next = l3;
-        l3.next = l4;
-        l4.next = l5;
-        l5.next = l6;
-        l6.next = l7;
-        l7.next = l8;
-        l8.next = l9;
-        l9.next = l10;
-
-
-
-        StringBuilder stringBuilder = addTwoNumbers.makeListNodeToNumber(l1);
-
-        Integer.parseInt(stringBuilder.reverse().toString());
-
-        Assert.assertEquals("1999999999", stringBuilder.toString());
+        while (listNode.next != null){
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
     }
 
 
     @Test
-    public void setListNodeTest(){
-
+    public void makeNumberTest(){
         ListNode l1 = new ListNode(9);
         ListNode l2 = new ListNode(9);
         ListNode l3 = new ListNode(9);
         ListNode l4 = new ListNode(9);
-        ListNode l5 = new ListNode(9);
+        ListNode l5 = new ListNode(0);
         ListNode l6 = new ListNode(9);
         ListNode l7 = new ListNode(9);
         ListNode l8 = new ListNode(9);
@@ -106,11 +78,54 @@ public class AddTowNumbersTest {
         l8.next = l9;
         l9.next = l10;
 
-        StringBuilder re = new StringBuilder();
+        long l = addTwoNumbers.makeNumber(l1);
 
-        addTwoNumbers.setListNode(l1, re);
-
-        System.out.println(re.toString());
+        System.out.println(l);
     }
+
+    @Test
+    public void test1(){
+        long i = Long.parseLong("1000000000000000000000000000001");
+
+        System.out.println(i);
+    }
+
+
+    @Test
+    public void makeNumberTest1(){
+        ListNode l1 = new ListNode(1);
+        ListNode l2 = new ListNode(0);
+        ListNode l3 = new ListNode(0);
+        ListNode l4 = new ListNode(0);
+        ListNode l5 = new ListNode(0);
+        ListNode l6 = new ListNode(0);
+        ListNode l7 = new ListNode(0);
+        ListNode l8 = new ListNode(0);
+        ListNode l9 = new ListNode(0);
+        ListNode l10 = new ListNode(0);
+        ListNode l11 = new ListNode(1);
+        l1.next = l2;
+        l2.next = l3;
+        l3.next = l4;
+        l4.next = l5;
+        l5.next = l6;
+        l6.next = l7;
+        l7.next = l8;
+        l8.next = l9;
+        l9.next = l10;
+        l10.next = l11;
+
+//[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+        System.out.println(addTwoNumbers.makeNumber(l1));
+
+        System.out.println(Long.MAX_VALUE);
+        System.out.println(Float.MAX_VALUE);
+        System.out.println(Double.MAX_VALUE);
+        System.out.println(Math.pow(10, 31) * 1 + 664);
+
+        Double d = Math.pow(10, 31) * 1 + 664;
+        System.out.println(d.longValue());
+    }
+
 
 }

@@ -1,8 +1,5 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //Add Two Numbers
 //Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 //Output: 7 -> 0 -> 8
@@ -10,51 +7,37 @@ import java.util.List;
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        int i = Integer.parseInt(makeListNodeToNumber(l1).reverse().toString())
-                + Integer.parseInt(makeListNodeToNumber(l2).reverse().toString());
-
+        long i = makeNumber(l1) + makeNumber(l2);
         return makeNumberToListNode(i);
     }
 
+    public long makeNumber(ListNode l){
+        ListNode node = l;
+        long result = 0;
+        int i=0;
 
-    public StringBuilder makeListNodeToNumber(ListNode l){
-        StringBuilder number = new StringBuilder();
-        number.append(l.val);
-
-        if (l.next != null){
-            number.append(makeListNodeToNumber(l.next));
-        }
-
-        return number;
-    }
-
-    public void setListNode(ListNode listNode, StringBuilder result){
-        if (listNode.next !=null){
-            setListNode(listNode.next, result);
-        }
-        result.append(listNode.val);
-    }
-
-    public ListNode makeNumberToListNode(int n){
-        String number = Integer.toString(n);
-
-        char[] chars = number.toCharArray();
-        int index = chars.length-1;
-        ListNode result = new ListNode(Character.getNumericValue(chars[index]));
-        for (int i=index-1; i>=0; i--){
-            this.addListNode(result, Character.getNumericValue(chars[i]));
+        while(node != null){
+            result += node.val * (Math.pow(10,i));
+            i++;
+            node = node.next;
         }
 
         return result;
     }
 
-    public ListNode addListNode(ListNode listNode, int nextVal){
-        if (listNode.next == null){
-            listNode.next = new ListNode(nextVal);
-            return listNode;
-        }
+    public ListNode makeNumberToListNode(long n){
+        String number = Double.toString(n);
 
-        return addListNode(listNode.next, nextVal);
+        char[] chars = number.toCharArray();
+
+        ListNode result = new ListNode(Character.getNumericValue(chars[0]));
+
+        for (int i=1; i<chars.length; i++){
+            ListNode now = new ListNode(Character.getNumericValue(chars[i]));
+            now.next = result;
+            result = now;
+        }
+        return result;
     }
 }
 
