@@ -20,16 +20,20 @@ public class MultiplyStrings {
 //        String num1 = "498828660196";
 //        String num2 = "840477629533";
 
-        String num1 = "123";
-        String num2 = "456";
+//        String num1 = "123";
+//        String num2 = "456";
+
+        String num1 = "0";
+        String num2 = "0";
 
         MultiplyStrings multiplyStrings = new MultiplyStrings();
         System.out.println(multiplyStrings.multiply(num1, num2));
     }
 
-    static int[] data = new int[1000];
-
     public String multiply(String num1, String num2) {
+
+        int[] data = new int[1000];
+
         if (num1.length() < num2.length()){
             String temp = num1;
             num1 = num2;
@@ -39,7 +43,7 @@ public class MultiplyStrings {
         for(int i=num2.length()-1; i>=0; i--){
             int n = num2.charAt(i) - '0';
             int s = num2.length()-i -1;
-            getNum(num1, n, s);
+            getNum(num1, n, s, data);
         }
 
         StringBuilder sb = new StringBuilder();
@@ -55,10 +59,10 @@ public class MultiplyStrings {
             }
         }
 
-        return sb.toString();
+        return sb.toString().equals("")?"0":sb.toString();
     }
 
-    public static void getNum(String num, int n, int s){
+    public static void getNum(String num, int n, int s, int[] data){
         int over = 0;
         int index = s;
 
