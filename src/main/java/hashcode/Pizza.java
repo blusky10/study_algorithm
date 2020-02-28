@@ -3,6 +3,8 @@ package hashcode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
@@ -13,6 +15,9 @@ public class Pizza {
     static int[] S;
     static Stack<Integer> subset = new Stack<>();
     static int sum = 0;
+    static int max = 0;
+    static List<Integer> results;
+    static boolean find = false;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,15 +39,30 @@ public class Pizza {
 
         Pizza pizza = new Pizza();
         pizza.search(0);
+
+        System.out.println(results.size());
+
+        for (int i=0; i<results.size(); i++){
+            System.out.print(Arrays.binarySearch(S, results.get(i)));
+            System.out.print(" ");
+        }
     }
     public void search(int k){
-
-
-
         if (k == S.length ){
-
-            System.out.println(subset.stream().collect(Collectors.toList()));
-            System.out.println(sum);
+            if (!find) {
+                if (sum == M){
+                    results = subset.stream().collect(Collectors.toList());
+                    max = sum;
+                    find = true;
+                }else {
+                    if (sum < M) {
+                        if (sum > max){
+                            results = subset.stream().collect(Collectors.toList());
+                            max = sum;
+                        }
+                    }
+                }
+            }
         }else{
             subset.push(S[k]);
             sum += S[k];
@@ -52,6 +72,4 @@ public class Pizza {
             search(k+1);
         }
     }
-
-
 }
