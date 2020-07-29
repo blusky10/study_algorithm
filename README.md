@@ -24,3 +24,4 @@
 
 ## HackerRank
 * Java If-Else
+* Simple Array Sum
