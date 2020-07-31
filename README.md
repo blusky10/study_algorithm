@@ -25,3 +25,5 @@
 ## HackerRank
 * Java If-Else
 * Simple Array Sum
+* Compare Triplets
+* Diagonal Difference
