@@ -27,3 +27,10 @@
 * Simple Array Sum
 * Compare Triplets
 * Diagonal Difference
+* Plus Minus
+* Staircase
+* Min Max Sum
+* Plus Minus
+* Staircase
+* Time Conversion
+* Birthday Cake Candles
