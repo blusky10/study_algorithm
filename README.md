@@ -3,6 +3,8 @@
 ## Codewars
 * BraceChecker
 * FindOutlier
+* Line Numbering
+* Nth Series
 
 ## Programers
 * Hash Level1 완주하지 못한 선수
@@ -21,6 +23,7 @@
 * Subset
 * Maximum Subarray Sum
 * LIS
+* UnionFind
 
 ## HackerRank
 * Java If-Else
