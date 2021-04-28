@@ -37,3 +37,6 @@
 * Staircase
 * Time Conversion
 * Birthday Cake Candles
+
+## Codility for Developers
+* BinaryGap
